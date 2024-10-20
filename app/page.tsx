@@ -1,10 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import SEO from './components/seo';
 import Header from './components/header';
 import HomeHeader from './components/home-header';
-import Link from 'next/link';
 import Footer from './components/footer';
+
 
 export default function Home() {
   const videoData = [
@@ -62,6 +63,14 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen m-auto">
+      <SEO
+        title="Contact Us - Discover Munnar Tours"
+        description="Get in touch with us to book your unforgettable tour packages in Munnar, Kerala."
+        image="https://example.com/images/munnar-thumbnail.jpg"
+        url="https://example.com/contact"
+        author="kl06offroader"  // Replace with the actual author
+        datePublished="2024-10-20"  // Update with the current date
+      />
       {/* Main Video Section */}
 
       <div className="relative h-screen ">

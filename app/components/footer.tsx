@@ -1,11 +1,13 @@
-import React from 'react';
 import Link from 'next/link';
 import { Facebook, Instagram, Twitter, Mail } from 'lucide-react';
+import React from 'react';
+
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
+    <footer className="bg-gray-900 text-white pb-8 text-center  ">
+      <div className='flex'>
+      <div className="mx-auto grid grid-cols-1 md:grid-cols-3 pt-8 gap-8 px-6 items-center ">
         {/* About Section */}
         <div className="flex flex-col space-y-4">
           <h3 className="text-xl font-bold">About Us</h3>
@@ -28,7 +30,7 @@ const Footer: React.FC = () => {
         {/* Social Media & Contact */}
         <div className="flex flex-col space-y-4">
           <h3 className="text-xl font-bold">Connect With Us</h3>
-          <div className="flex space-x-4">
+          <div className="flex space-x-4 items-center justify-center">
             <a href="https://facebook.com" className="hover:text-gray-400">
               <Facebook size={24} />
             </a>
@@ -50,9 +52,8 @@ const Footer: React.FC = () => {
           </p>
         </div>
       </div>
-
-      {/* Bottom Footer */}
-      <div className="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500">
+      </div>
+      <div className="border-t border-gray-700 mt-8 pt-6 text-center bottom-0 text-gray-500 ">
         <p>&copy; {new Date().getFullYear()} TourPackage. All rights reserved.</p>
       </div>
     </footer>

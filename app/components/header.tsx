@@ -44,7 +44,7 @@ export default function Header(){
                 </Link>
               </li>
               <li>
-                <Link href="/" className="link-116">
+                <Link href="/contact" className="link-116">
                   Contact
                 </Link>
               </li>
@@ -89,7 +89,7 @@ export default function Header(){
                     </li>
                     <li>
                       <Link
-                        href="/"
+                        href="/contact"
                         className="block px-4 py-2 hover:bg-gray-100"
                         onClick={toggleMenu}
                       >
