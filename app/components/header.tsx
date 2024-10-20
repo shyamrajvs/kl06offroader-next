@@ -13,7 +13,7 @@ export default function Header(){
   };
   return (
     
-      <header className="  fixed bg-green-500 text-white font-bold top-0 w-full font-serif">
+      <header className="  fixed bg-green-500 text-white font-bold top-0 z-10 w-full font-serif">
         <nav className="px-8 mt-2  sm:mx-6">
           <div className="flex justify-between items-center">
             <div className="text-2xl w-32 h-20">

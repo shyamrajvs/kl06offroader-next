@@ -103,7 +103,7 @@ export default function Home() {
       {showHeader && <Header />}
 
       {/* video grid section */}
-      <div className="bg-gray-200">
+      <div className="bg-gray-200 ">
         <div>
           <h2 className="text-3xl font-bold text-center mt-8 py-10 text-black">
             Discover Munnar
