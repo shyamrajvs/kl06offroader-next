@@ -2,26 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+/* welcome to south.. animation */
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.animate-typing {
+  overflow: hidden;
+  white-space: nowrap;
+  
+  animation: typing 3.5s steps(60, end) ,
+             blink-caret .1s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: rgba(0, 255, 55, 0.247); }
+}
+
+
+/* Home page link hover */
+
+.link-116 {
+  color: #ffffff;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 10px 0px;
+  position: relative;
+  overflow: hidden;
+}
+
+.link-116::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: #ffffff;
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+.link-116:hover::after {
+  width: 100%;
+  animation: heartbeat116 1.5s infinite;
+}
+
+@keyframes heartbeat116 {
+  0%, 100% {
+    width: 100%;
+  }
+  50% {
+    width: 60%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+
+.custom-button {
+  background: linear-gradient(to right, #38b2ac, #4299e1); /* Gradient from teal-400 to blue-500 */
+  color: white;
+  font-weight: bold;
+  padding: 12px 24px; /* py-3 px-6 */
+  border-radius: 9999px; /* Rounded full */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  transition: transform 0.3s ease, background 0.3s ease; /* Smooth transition for hover effects */
+  outline: none;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.custom-button:hover {
+  transform: scale(1.05); /* hover:scale-105 */
+  background: linear-gradient(to right, #319795, #3182ce); /* hover:from-teal-500 to-blue-600 */
+}
+
+.custom-button:focus {
+  outline: none; /* focus:outline-none */
+  box-shadow: 0 0 0 4px rgba(66, 153, 225, 0.5); /* focus:ring-4 focus:ring-blue-300 */
 }
