@@ -16,11 +16,19 @@ export default function HomeHeader (){
     <header className="bg-transparent absolute text-white font-bold top-0 w-full  font-serif">
         <nav className="px-8 mt-2 sm:mx-6">
           <div className="flex justify-between items-center">
-            <div className="text-2xl w-32 h-20">
-              <Link href="/">
-                <img src="/images/logo.webp" alt="KL 06 OFFROADER" />
-              </Link>
-            </div>
+          <div className="text-2xl w-32 h-20">
+  <Link href="/">
+    <img 
+      src="/images/logo.webp" 
+      alt="KL 06 OFFROADER" 
+      width="128" 
+      height="80" 
+      loading="lazy"
+      className="object-contain"
+    />
+  </Link>
+</div>
+
 
             {/* Mobile Menu Button */}
             <button
@@ -39,7 +47,7 @@ export default function HomeHeader (){
                 </Link>
               </li>
               <li>
-                <Link href="/" className="link-116">
+                <Link href="/packages" className="link-116">
                   Tour Packages
                 </Link>
               </li>
@@ -49,7 +57,7 @@ export default function HomeHeader (){
                 </Link>
               </li>
               <li>
-                <Link href="/" className="link-116">
+                <Link href="/rooms" className="link-116">
                   Rooms
                 </Link>
               </li>
@@ -80,7 +88,7 @@ export default function HomeHeader (){
                     </li>
                     <li>
                       <Link
-                        href="/"
+                        href="/packages"
                         className="block px-4 py-2 hover:bg-gray-100"
                         onClick={toggleMenu}
                       >
@@ -98,7 +106,7 @@ export default function HomeHeader (){
                     </li>
                     <li>
                       <Link
-                        href="/"
+                        href="/rooms"
                         className="block px-4 py-2 hover:bg-gray-100"
                         onClick={toggleMenu}
                       >

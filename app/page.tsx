@@ -5,6 +5,7 @@ import SEO from './components/seo';
 import Header from './components/header';
 import HomeHeader from './components/home-header';
 import Footer from './components/footer';
+import LazyVideo from './components/lazyVideo';
 
 
 export default function Home() {
@@ -112,7 +113,7 @@ export default function Home() {
       {showHeader && <Header />}
 
       {/* video grid section */}
-      <div className="bg-gray-200 ">
+      <div className="bg-gray-200 pb-10 ">
         <div>
           <h2 className="text-3xl font-bold text-center mt-8 py-10 text-black">
             Discover Munnar
@@ -123,17 +124,11 @@ export default function Home() {
                 key={index}
                 className="bg-white  shadow-lg overflow-hidden  "
               >
-                <div className="aspect-w-16 aspect-h-9">
-                  <video
-                    className="w-full h-[80vh] object-cover "
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                  >
-                    <source src={item.src} type="video/webm" />
-                    Video
-                  </video>
+                <div className="aspect-w-16 aspect-h-9 w-full h-[80vh] object-cover">
+                
+                  <LazyVideo src={item.src} type="video/webm" />
+                
+                  
                 </div>
                 <div className=" flex inset-0 justify-center items-center text-black font-mono mt-2">
                   <h3 className="font-bold text-center py-2 text-lg">
