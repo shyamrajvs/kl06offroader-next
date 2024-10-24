@@ -7,7 +7,6 @@ import HomeHeader from './components/home-header';
 import Footer from './components/footer';
 import LazyVideo from './components/lazyVideo';
 
-
 export default function Home() {
   const videoData = [
     {
@@ -50,6 +49,15 @@ export default function Home() {
 
   const [showHeader, setShowHeader] = useState(false);
 
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    });
+    return () => clearTimeout(timer);
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       setShowHeader(window.scrollY > 0); // Show header when scrolled
@@ -61,7 +69,19 @@ export default function Home() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
+  if (loading) {
+    return (
+      <div className="w-full h-screen flex flex-col items-center justify-center bg-white transition-opacity duration-1000 bg-opacity-100 ">
+        
+        <div className="flex space-x-2 animate-bounce" >
+          <video className='h-32 w-32'>
+            <source src="/videos/Jeep.mp4" type="video/mp4" />
+          </video>
+        </div>
+       
+      </div>
+    );
+  }
   return (
     <div className="relative min-h-screen m-auto">
       <SEO
@@ -69,8 +89,8 @@ export default function Home() {
         description="Get in touch with us to book your unforgettable tour packages in Munnar, Kerala."
         image="https://example.com/images/munnar-thumbnail.jpg"
         url="https://example.com/contact"
-        author="kl06offroader"  // Replace with the actual author
-        datePublished="2024-10-20"  // Update with the current date
+        author="kl06offroader" // Replace with the actual author
+        datePublished="2024-10-20" // Update with the current date
       />
       {/* Main Video Section */}
 
@@ -89,18 +109,18 @@ export default function Home() {
       <div className="absolute inset-0 bg-black bg-opacity-50 flex max-h-[100vh] sm:max-h-screen items-center justify-center ">
         <div className=" text-white">
           <h1 className="animate-typing text-3xl md:text-4xl lg:text-5xl sm:text-2xl text-center font-serif font-bold mb-4">
-            <span className="sm:hidden">Welcome to</span>
+            <span className="block sm:hidden">Welcome to</span>
             <span className="block sm:hidden">South India's</span>
 
             <span className="sm:hidden block ">Kashmir</span>
 
-            <span className="hidden sm:block">
+            <span className="hidden md:block">
               Welcome to South India's Kashmir
             </span>
           </h1>
 
           <p className="animate-typing text-lg md:text-xl font-sans lg:text-2xl sm:text-2xl sm:ml-4">
-            Explore amazing{' '}
+            Explore amazing hidden <span> </span>
             <span className=" font-extrabold font-mono">Munnar</span> with us.
           </p>
         </div>
@@ -118,17 +138,14 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center mt-8 py-10 text-black">
             Discover Munnar
           </h2>
-          <div className="grid grid-cols-1 md:mx-8 md:grid-cols-3 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 mx-1 md:mx-8 md:grid-cols-3 gap-8">
             {videoData.map((item, index) => (
               <div
                 key={index}
                 className="bg-white  shadow-lg overflow-hidden  "
               >
                 <div className="aspect-w-16 aspect-h-9 w-full h-[80vh] object-cover">
-                
                   <LazyVideo src={item.src} type="video/webm" />
-                
-                  
                 </div>
                 <div className=" flex inset-0 justify-center items-center text-black font-mono mt-2">
                   <h3 className="font-bold text-center py-2 text-lg">
