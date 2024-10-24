@@ -46,14 +46,14 @@ const LazyVideo: React.FC<LazyVideoProps> = ({ src, type }) => {
       {/* Loading Spinner */}
       {!isLoaded && (
         <div className="absolute inset-0 flex items-center justify-center bg-gray-200">
-          <div className="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12"></div>
+          <div className="loader ease-linear  border-gray-200 h-12 w-12"></div>
         </div>
       )}
 
       {/* Video Element */}
       <video
         ref={videoRef}
-        className={`w-full h-full object-cover rounded-t-lg transition-opacity duration-500 ${
+        className={`w-full h-full object-cover  transition-opacity duration-500 ${
           isLoaded ? 'opacity-100' : 'opacity-0'
         }`}
         autoPlay={isVisible}

@@ -1,11 +1,12 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import SEO from './components/seo';
 import Header from './components/header';
 import HomeHeader from './components/home-header';
 import Footer from './components/footer';
 import LazyVideo from './components/lazyVideo';
+import { motion } from 'framer-motion';
 
 export default function Home() {
   const videoData = [
@@ -48,13 +49,12 @@ export default function Home() {
   ];
 
   const [showHeader, setShowHeader] = useState(false);
-
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    });
+    }, 1000); // Set for 1 second
     return () => clearTimeout(timer);
   }, []);
 
@@ -69,19 +69,19 @@ export default function Home() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
   if (loading) {
     return (
-      <div className="w-full h-screen flex flex-col items-center justify-center bg-white transition-opacity duration-1000 bg-opacity-100 ">
-        
-        <div className="flex space-x-2 animate-bounce" >
-          <video className='h-32 w-32'>
+      <div className="w-full h-screen flex flex-col items-center justify-center bg-white transition-opacity duration-1000 bg-opacity-100">
+        <div className="flex space-x-2 animate-bounce">
+          <video className="h-32 w-32">
             <source src="/videos/Jeep.mp4" type="video/mp4" />
           </video>
         </div>
-       
       </div>
     );
   }
+
   return (
     <div className="relative min-h-screen m-auto">
       <SEO
@@ -92,11 +92,11 @@ export default function Home() {
         author="kl06offroader" // Replace with the actual author
         datePublished="2024-10-20" // Update with the current date
       />
-      {/* Main Video Section */}
 
-      <div className="relative h-screen ">
+      {/* Main Video Section */}
+      <div className="relative h-screen">
         <video
-          className=" w-full h-full object-cover overflow-hidden"
+          className="w-full h-full object-cover overflow-hidden"
           autoPlay
           loop
           muted
@@ -106,55 +106,36 @@ export default function Home() {
         </video>
       </div>
 
-      <div className="absolute inset-0 bg-black bg-opacity-50 flex max-h-[100vh] sm:max-h-screen items-center justify-center ">
-        <div className=" text-white">
+      <div className="absolute inset-0 bg-black bg-opacity-50 flex max-h-[100vh] sm:max-h-screen items-center justify-center">
+        <div className="text-white">
           <h1 className="animate-typing text-3xl md:text-4xl lg:text-5xl sm:text-2xl text-center font-serif font-bold mb-4">
             <span className="block sm:hidden">Welcome to</span>
             <span className="block sm:hidden">South India's</span>
-
-            <span className="sm:hidden block ">Kashmir</span>
-
+            <span className="sm:hidden block">Kashmir</span>
             <span className="hidden md:block">
               Welcome to South India's Kashmir
             </span>
           </h1>
-
           <p className="animate-typing text-lg md:text-xl font-sans lg:text-2xl sm:text-2xl sm:ml-4">
-            Explore amazing hidden <span> </span>
-            <span className=" font-extrabold font-mono">Munnar</span> with us.
+            Explore amazing hidden <span></span>
+            <span className="font-extrabold font-mono">Munnar</span> with us.
           </p>
         </div>
       </div>
 
       {/* Home page header */}
-
       <HomeHeader />
-
       {showHeader && <Header />}
 
-      {/* video grid section */}
-      <div className="bg-gray-200 pb-10 ">
-        <div>
-          <h2 className="text-3xl font-bold text-center mt-8 py-10 text-black">
-            Discover Munnar
-          </h2>
-          <div className="grid grid-cols-1 mx-1 md:mx-8 md:grid-cols-3 gap-8">
-            {videoData.map((item, index) => (
-              <div
-                key={index}
-                className="bg-white  shadow-lg overflow-hidden  "
-              >
-                <div className="aspect-w-16 aspect-h-9 w-full h-[80vh] object-cover">
-                  <LazyVideo src={item.src} type="video/webm" />
-                </div>
-                <div className=" flex inset-0 justify-center items-center text-black font-mono mt-2">
-                  <h3 className="font-bold text-center py-2 text-lg">
-                    {item.place}
-                  </h3>
-                </div>
-              </div>
-            ))}
-          </div>
+      {/* Video grid section */}
+      <div className="bg-gray-200 pb-10">
+        <h2 className="text-3xl font-bold text-center mt-8 py-10 text-black">
+          Discover Munnar
+        </h2>
+        <div className="grid grid-cols-1 mx-1 md:mx-8 md:grid-cols-3 gap-8">
+          {videoData.map((item, index) => (
+            <VideoCard key={index} item={item} />
+          ))}
         </div>
       </div>
 
@@ -193,9 +174,53 @@ export default function Home() {
         </div>
       </div>
 
-      {/*Footer*/}
-
+      {/* Footer */}
       <Footer />
     </div>
   );
 }
+
+const VideoCard = ({ item }: { item: { src: string; place: string } }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true); // Set to true when the item is in view
+          observer.unobserve(entry.target); // Stop observing once it becomes visible
+        }
+      });
+    });
+
+    if (ref.current) {
+      observer.observe(ref.current); // Start observing the ref
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current); // Clean up the observer
+      }
+    };
+  }, [ref]);
+
+  return (
+    <div
+      ref={ref}
+      className=" shadow-lg overflow-hidden transition-opacity duration-500"
+    >
+      <motion.div
+        className="aspect-w-16 aspect-h-9 w-full h-[80vh]"
+        initial={{ opacity: 0, scale: 0.9 }} // Initial animation state
+        animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0.9 }} // Animate when visible
+        transition={{ duration: 1 }}
+      >
+        <LazyVideo src={item.src} type="video/webm" />
+      </motion.div>
+      <div className="flex inset-0 justify-center items-center text-black font-mono mt-2">
+        <h3 className="font-bold text-center py-2 text-lg">{item.place}</h3>
+      </div>
+    </div>
+  );
+};
