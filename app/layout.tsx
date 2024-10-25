@@ -27,19 +27,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <Script id="taos-init" strategy="beforeInteractive">
-          {`document.documentElement.classList.add('js')`}
-        </Script>
-      </head>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
-        <Script 
-          src="https://unpkg.com/taos@1.0.5/dist/taos.js" 
-          strategy="afterInteractive"
-        />
+       
       </body>
     </html>
   );
