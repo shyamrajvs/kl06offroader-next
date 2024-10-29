@@ -11,39 +11,39 @@ import { motion } from 'framer-motion';
 export default function Home() {
   const videoData = [
     {
-      src: '/videos/cwaterfalls.webm',
+      src: '/videos/cwaterfalls1.webm',
       place: 'Chunayammackal Waterfalls',
     },
     {
-      src: '/videos/offroads.webm',
+      src: '/videos/offroads1.webm',
       place: 'OFF-Roads',
     },
     {
-      src: '/videos/ponmudidam.webm',
+      src: '/videos/ponmudidam1.webm',
       place: 'Ponmudi Dam',
     },
     {
-      src: '/videos/tea.webm',
+      src: '/videos/tea1.webm',
       place: 'Tea Plantations',
     },
     {
-      src: '/videos/anakkulamvp.webm',
-      place: 'Anakkulam view-point',
+      src: '/videos/anakkulamvp1.webm',
+      place: 'Anakulam view-point',
     },
     {
-      src: '/videos/attukadwf.webm',
+      src: '/videos/attukadwf1.webm',
       place: 'Attukad-Waterfalls',
     },
     {
-      src: '/videos/nadukani.webm',
+      src: '/videos/nadukani1.webm',
       place: 'Nadukani-hilltop',
     },
     {
       src: '/videos/offroads.webm',
-      place: 'Attukad-Waterfalls',
+      place: 'Gap-Road',
     },
     {
-      src: '/videos/home18.mp4',
+      src: '/videos/anakulamrc1.webm',
       place: 'Anakkulam Rivercross',
     },
   ];
@@ -102,7 +102,7 @@ export default function Home() {
           muted
           playsInline
         >
-          <source src="/videos/v1.webm" type="video/webm" />
+          <source src="/videos/homebgvideo.webm" type="video/webm" />
         </video>
       </div>
 
@@ -117,7 +117,7 @@ export default function Home() {
             </span>
           </h1>
           <p className="animate-typing text-lg md:text-xl font-sans lg:text-2xl sm:text-2xl sm:ml-4">
-            Explore amazing hidden <span></span>
+            Explore amazing <span></span>
             <span className="font-extrabold font-mono">Munnar</span> with us.
           </p>
         </div>

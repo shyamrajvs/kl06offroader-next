@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
+import BookNowButton from './booknow';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -57,6 +58,9 @@ export default function Header() {
               <Link href="/rooms" className="link-116">
                 Rooms
               </Link>
+            </li>
+            <li>
+              <BookNowButton/>
             </li>
           </ul>
 
