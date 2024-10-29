@@ -121,25 +121,25 @@ const KattadiparaPage: FC = () => {
       name: 'Nadukani-Mountain',
       description:
         'Witness the mesmerizing beauty of cascading waters surrounded by dense forests.',
-      videos: ['/videos/Nadukani.mp4', '/videos/nadukani2.mp4'],
+      videos: ['/videos/nadukani1.webm', '/videos/nadukani2.mp4'],
     },
     {
       name: 'Kallimali-Viewpoint',
       description:
         'Witness the mesmerizing beauty of cascading waters surrounded by dense forests.',
-      videos: ['/videos/kallimali.mp4'],
+      videos: ['/videos/kallimali.webm'],
     },
     {
       name: 'Viewpoint',
       description:
         'Witness the mesmerizing beauty of cascading waters surrounded by dense forests.',
-      videos: ['/videos/kattadipara1.mp4'],
+      videos: ['/videos/kattadipara1.webm'],
     },
     {
       name: 'Kattadipara',
       description:
         'Witness the mesmerizing beauty of cascading waters surrounded by dense forests.',
-      videos: ['/videos/kattadipara3.mp4', '/videos/kattadipara4.mp4'],
+      videos: ['/videos/kattadipara3.webm', '/videos/kattadipara4.webm'],
     },
   ];
 

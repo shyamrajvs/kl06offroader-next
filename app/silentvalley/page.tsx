@@ -22,37 +22,37 @@ const SilentValleyPage: FC = () => {
       name: 'Silent-valley',
       description:
         'Experience breathtaking panoramic views of the surrounding hills and valleys.',
-      video: '/videos/silentvalley1.mp4', // Changed to single video string
+      video: '/videos/silentvalley.webm', // Changed to single video string
     },
     {
       name: 'Way to Heaven',
       description:
         'Wander through lush green tea gardens and learn about tea production.',
-      video: '/videos/silentvalley2.mp4', // Changed to single video string
+      video: '/videos/waytohvn.webm', // Changed to single video string
     },
     {
       name: 'Hills and Valleys',
       description:
         'Witness the mesmerizing beauty of cascading waters surrounded by dense forests.',
-      video: '/videos/silentvalley3.mp4', // Changed to single video string
+      video: '/videos/hillandvalley.webm', // Changed to single video string
     },
     {
       name: 'River-Cross',
       description:
         'Witness the mesmerizing beauty of cascading waters surrounded by dense forests.',
-      video: '/videos/silentvalley6.mp4', // Changed to single video string
+      video: '/videos/rivercross.webm', // Changed to single video string
     },
     {
       name: 'Mountain',
       description:
         'Witness the mesmerizing beauty of cascading waters surrounded by dense forests.',
-      video: '/videos/silentvalley4.mp4', // Changed to single video string
+      video: '/videos/mountain.webm', // Changed to single video string
     },
     {
       name: 'Tea-Plantation',
       description:
         'Witness the mesmerizing beauty of cascading waters surrounded by dense forests.',
-      video: '/videos/silentvalley5.mp4', // Changed to single video string
+      video: '/videos/teaplantation.webm', // Changed to single video string
     },
   ];
 
@@ -90,8 +90,14 @@ const SilentValleyPage: FC = () => {
                 <li>Picnic point (sunrise & sunset options)</li>
                 <li>Serene lake view</li>
               </ul>
-              <p className="mt-3 text-lg text-gray-800 font-semibold">
-                3-4 Hours - ₹3000 per trip (up to 6 people)
+              <p className="mt-3 text-center pt-2 pb-2 text-xl font-bold text-black ">
+                <span className="hidden lg:block">
+                  3-4 Hours - ₹3000 per trip (up to 6 people)
+                </span>
+                <span className="block lg:hidden">
+                  3-4 Hours - ₹3000 per trip
+                </span>
+                <span className="block lg:hidden">(up to 6 people)</span>
               </p>
             </div>
 
@@ -112,6 +118,33 @@ const SilentValleyPage: FC = () => {
                 <li>Professional guide</li>
               </ul>
             </div>
+            <div className="bg-white p-4 rounded-lg mb-4">
+            <h3 className="text-xl font-semibold text-green-500 mb-2">Exclusions</h3>
+            <ul className="list-inside list-disc text-gray-600">
+              <li>Gratuities (recommended)</li>
+              <li>Transportation to/from attractions</li>
+            </ul>
+          </div>
+
+          <div className="bg-white p-4 rounded-lg mb-4">
+            <h3 className="text-xl font-semibold text-green-500 mb-2">Additional Info</h3>
+            <p className="text-gray-600">
+              Confirmation will be received at the time of booking. Our team will connect with you for further details. The duration of transfers is approximate, depending on traffic and time of day.
+            </p>
+          </div>
+
+          <div className="bg-white p-4 rounded-lg mb-4">
+            <h3 className="text-xl font-semibold text-green-500 mb-2">Cancellation Policy</h3>
+            <p className="text-gray-600">For a full refund, cancel at least 24 hours before the start date of the experience.</p>
+          </div>
+
+          <div className="bg-white p-4 rounded-lg mb-4">
+            <h3 className="text-xl font-semibold text-green-500 mb-2">Departure Point</h3>
+            <p className="text-gray-600"> Return : At Pick up point</p>
+            <p className="text-gray-600">Anachal, Munnar</p>
+            <p className="text-gray-600">Contact: +91 6238343996</p>
+            <p className="text-gray-600">Contact: +91 7306687833</p>
+          </div>
 
             {/* Places Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">

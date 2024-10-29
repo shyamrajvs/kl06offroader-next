@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
+import Booknow from './booknow';
 
 export default function HomeHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -59,6 +60,9 @@ export default function HomeHeader() {
                 Rooms
               </Link>
             </li>
+            <li>
+              <Booknow/>
+            </li>
           </ul>
 
           {/* Mobile Menu Overlay */}
@@ -110,6 +114,9 @@ export default function HomeHeader() {
                     >
                       Rooms
                     </Link>
+                  </li>
+                  <li>
+                    <Booknow/>
                   </li>
                 </ul>
               </div>

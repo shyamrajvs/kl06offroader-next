@@ -161,6 +161,7 @@ const OffroadRides = () => {
         <div className="space-y-2">
           <p>Location: Anachal, Munnar</p>
           <p>Contact: +91 6238343996</p>
+          <p>Contact: +91 7306687833</p>
           <p className="text-sm mt-4">
             *24-hour cancellation policy applies for full refund
           </p>

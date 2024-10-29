@@ -39,7 +39,7 @@ export default function Home() {
       place: 'Nadukani-hilltop',
     },
     {
-      src: '/videos/offroads.webm',
+      src: '/videos/home14.webm',
       place: 'Gap-Road',
     },
     {

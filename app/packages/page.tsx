@@ -22,12 +22,12 @@ export default function Packages() {
     {
       name: 'Ponmudi Package',
       path: '/ponmudi',
-      videoSrc: '/videos/ponmudidam.webm',
+      videoSrc: '/videos/ponmudidam1.webm',
     },
     {
       name: 'Silent-Valley Package',
       path: '/silentvalley',
-      videoSrc: '/videos/home12.mp4',
+      videoSrc: '/videos/waytohvn.webm',
     },
     {
       name: 'Kattadipara package ',
@@ -37,30 +37,13 @@ export default function Packages() {
     {
       name: 'Off-Road package',
       path: '/Offroads',
-      videoSrc: '/videos/mullanthandu.webm',
+      videoSrc: '/videos/off1.webm',
     },
   ];
 
   return (
     <div>
       <Header />
-
-      {/* <div className="min-h-screen border-y-green-100 mt-28">
-        <div className="py-10">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-10">
-              Explore Our Tour Packages
-            </h2>
-            <div>
-              { packages.map((pkg, index) =>(
-                <div>
-
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div> */}
       <div className="min-h-screen bg-gray-100 mt-24">
         <div className="bg-gray-100 py-10">
           <div className="container mx-auto px-4">

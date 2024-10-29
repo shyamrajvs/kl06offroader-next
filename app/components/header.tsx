@@ -114,6 +114,7 @@ export default function Header() {
                       Rooms
                     </Link>
                   </li>
+                  <li><BookNowButton/></li>
                 </ul>
               </div>
             </div>

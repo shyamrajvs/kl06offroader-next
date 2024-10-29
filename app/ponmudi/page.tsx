@@ -6,6 +6,7 @@ import { StaticImageData } from 'next/image';
 import { div } from 'framer-motion/client';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import BookButton from '../components/bookbutton';
 
 // Types
 interface Video {
@@ -89,17 +90,21 @@ const Ponmudi: React.FC = () => {
     {
       name: "Chunayamackal Watterfalls",
       description: "Experience breathtaking panoramic views of the surrounding hills and valleys.",
-      videos: ["/videos/Waterfall1.mp4", "/videos/Waterfall2.mp4", "/videos/Waterfall3.mp4"]
+      videos: [
+        '/videos/cwaterfalls1.webm',
+        '/videos/waterfall2.webm',
+        '/videos/waterfall1.webm',
+      ],
     },
     {
       name: "Hanging-Bridge",
       description: "Wander through lush green tea gardens and learn about tea production.",
-      videos: ["/videos/bridge2.mp4", "/videos/bridge1.mp4"]
+      videos: ['/videos/bridge3.webm', '/videos/Bridge1.webm'],
     },
     {
       name: "Ponmudi-Dam",
       description: "Witness the mesmerizing beauty of cascading waters surrounded by dense forests.",
-      videos: ["/videos/Dam2.mp4", "/videos/Dam1.mp4"]
+      videos: ['/videos/dam2.webm', '/videos/ponmudidam1.webm'],
     },
     {
       name: "Echo-Point",
@@ -109,16 +114,13 @@ const Ponmudi: React.FC = () => {
     {
       name: "Nadukani-Mountain",
       description: "Witness the mesmerizing beauty of cascading waters surrounded by dense forests.",
-      videos: ["/videos/nadukani1.mp4", "/videos/Anakulam2.mp4"]
+      videos: ["/videos/nadukani1.webm", "/videos/nadukani2.webm"]
     },
     {
       name: "Kallimali-Viewpoint",
       description: "Witness the mesmerizing beauty of cascading waters surrounded by dense forests.",
       videos: [
-        "/videos/Anakulam3.mp4",
-        "/videos/Anakulam4.mp4",
-        "/videos/Anakulam6.mp4",
-        "/videos/Anakulam5.mp4"
+        "/videos/kallimali.webm",
       ]
     }
   ];
@@ -149,8 +151,14 @@ const Ponmudi: React.FC = () => {
                 <li>Picnic point (sunrise & sunset options)</li>
                 <li>Serene lake view</li>
               </ul>
-              <p className="mt-3 text-lg text-gray-800 font-semibold">
-                3-4 Hours - ₹3000 per trip (up to 6 people)
+              <p className="mt-3 text-center pt-2 pb-2 text-xl font-bold text-black ">
+                <span className="hidden lg:block">
+                  3-4 Hours - ₹3500 per trip (up to 6 people)
+                </span>
+                <span className="block lg:hidden">
+                  3-4 Hours - ₹3500 per trip
+                </span>
+                <span className="block lg:hidden">(up to 6 people)</span>
               </p>
             </div>
 
@@ -205,6 +213,8 @@ const Ponmudi: React.FC = () => {
               <p className="text-gray-600">Return: At Pick up point</p>
               <p className="text-gray-600">Anachal, Munnar</p>
               <p className="text-gray-600">Contact: +91 6238343996</p>
+              <p className="text-gray-600">Contact: +91 7306687833</p>
+
             </div>
           </div>
         </section>
@@ -217,7 +227,7 @@ const Ponmudi: React.FC = () => {
         </div>
 
         {/* Description Section */}
-        <section className="bg-white rounded-lg shadow-md p-8 mb-12">
+        <section className="bg-white text-center  rounded-lg shadow-md p-8 mb-12">
           <h2 className="text-3xl font-semibold mb-4 text-gray-800">
             Discover the Wonders of Ponmudi
           </h2>
@@ -234,9 +244,9 @@ const Ponmudi: React.FC = () => {
           </div>
         </section>
 
-        {/* <div className="text-center">
-          <BookButton />
-        </div> */}
+        <div className="text-center">
+          <BookButton/>
+        </div>
       </div>
     </div>
       <Footer/>

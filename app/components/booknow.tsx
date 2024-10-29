@@ -1,16 +1,17 @@
 export default function () {
   return (
     <div>
-      <a href="#_" className="relative inline-flex items-center justify-start py-2  px-3 overflow-hidden font-semibold text-green-600 transition-all duration-150 ease-in-out rounded-e-lg rounded-s-lg   bg-gray-50 group">
-    <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-green-600 group-hover:h-full"></span>
-    <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
-        
-    </span>
-    <span className="absolute left-0 pl-2.5   ease-out duration-200">
-        
-    </span>
-    <span className="relative w-full text-center transition-colors duration-200 ease-in-out group-hover:text-white">Book Now</span>
-</a>
+      <a href="#_" className="relative inline-block text-base group">
+        <span className="relative z-10 block px-4 py-2 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-full group-hover:text-white">
+          <span className="absolute inset-0 w-full h-full px-4 py-2 rounded-full bg-gray-50"></span>
+          <span className="absolute left-0 w-36 h-36 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-10 bg-gray-900 group-hover:-rotate-180 ease"></span>
+          <span className="relative font-bold">Book Now</span>
+        </span>
+        <span
+          className="absolute bottom-0 right-0 w-full h-10 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-full group-hover:mb-0 group-hover:mr-0"
+          data-rounded="rounded-full"
+        ></span>
+      </a>
     </div>
   );
 }

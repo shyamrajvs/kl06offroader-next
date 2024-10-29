@@ -11,13 +11,12 @@ import Header from '../components/header';
 // Note: In Next.js, you'll need to store videos in the public directory
 // and reference them with absolute paths starting with '/'
 const videos = {
-  off1: '/videos/off1.mp4',
-  off2: '/videos/off6.mp4',
-  off3: '/videos/off2.mp4',
-  off4: '/videos/off2.mp4',
-  off5: '/videos/off7.mp4',
-  off6: '/videos/offroad-1.mp4',
-  off7: '/videos/offroad-4.mp4',
+  off1: '/videos/off1.webm',
+  off2: '/videos/off6.webm',
+  off3: '/videos/off2.webm',
+  off4: '/videos/off5.webm',
+  off5: '/videos/off7.webm',
+  off6: '/videos/off8.webm',
 };
 
 interface VideoSliderProps {
@@ -141,7 +140,7 @@ const Offroads: FC = () => {
           ))}
         </div>
 
-        <div className="bg-white rounded-lg shadow-md p-8 mb-12">
+        <div className="bg-white text-center rounded-lg shadow-md p-8 mb-12">
           <h2 className="text-3xl font-semibold mb-4 text-gray-800">
             Conquer the Untamed Trails of Munnar
           </h2>

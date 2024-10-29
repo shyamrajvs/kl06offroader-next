@@ -232,9 +232,15 @@ const Vattavada: React.FC = () => {
                   <li>Top-station view- point (sunrise & sunset options)</li>
                   <li>Vattavada</li>
                 </ul>
-                <p className="mt-3 text-lg text-gray-800 font-semibold">
-                  7-8 Hours - ₹6500 per trip (up to 6 people)
-                </p>
+                <p className="mt-3 text-center pt-2 pb-2 text-xl font-bold text-black ">
+                <span className="hidden lg:block">
+                  7-8 Hours - ₹6000 per trip (up to 6 people)
+                </span>
+                <span className="block lg:hidden">
+                  7-8 Hours - ₹6000 per trip
+                </span>
+                <span className="block lg:hidden">(up to 6 people)</span>
+              </p>
               </div>
 
               <h2 className="text-2xl font-bold text-green-600 mt-6 mb-2">
@@ -288,9 +294,10 @@ const Vattavada: React.FC = () => {
                 <h3 className="text-xl font-semibold text-green-500 mb-2">
                   Departure Point
                 </h3>
-                <p className="text-gray-600"> Return : At Pick up point</p>
+                <p className="text-gray-600"> Return : At pick up point</p>
                 <p className="text-gray-600">Anachal, Munnar</p>
                 <p className="text-gray-600">Contact: +91 6238343996</p>
+                <p className="text-gray-600">Contact: +91 7306687833</p>
               </div>
             </div>
 
@@ -302,7 +309,7 @@ const Vattavada: React.FC = () => {
             </div>
 
             {/* About Section */}
-            <div className="bg-white rounded-lg shadow-md p-8 mt-36 mb-5">
+            <div className="bg-white text-center rounded-lg shadow-md p-8 mt-36 mb-5">
               <h2
                 className="text-3xl font-semibold mb-4 text-gray-800"
                 style={{
