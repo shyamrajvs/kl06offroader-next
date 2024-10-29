@@ -115,7 +115,7 @@ const KattadiparaPage: FC = () => {
       name: 'Echo-Point',
       description:
         'Witness the mesmerizing beauty of cascading waters surrounded by dense forests.',
-      videos: ['/videos/echopoint.mp4'],
+      videos: ['/videos/echopoint.webm'],
     },
     {
       name: 'Nadukani-Mountain',

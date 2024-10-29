@@ -1,9 +1,10 @@
+
 // components/OffroadRide/OffroadRide.tsx
 import React from 'react';
 import { Compass, Mountain, Sunrise, Users, Clock, Ban, Check } from 'lucide-react';
 import type { AdventureHighlight, PackageDetail, InclusionExclusion } from './types';
 
-const OffroadRide: React.FC = () => {
+const OffroadRides = () => {
   const adventureHighlights: AdventureHighlight[] = [
     {
       title: "Extreme Terrain Challenge",
@@ -77,9 +78,10 @@ const OffroadRide: React.FC = () => {
 
   const renderInclusionExclusionItem = (text: string, type: 'included' | 'excluded') => (
     <li key={text} className="flex items-center">
-      <span className={`w-2 h-2 ${type === 'included' ? 'bg-green-500' : 'bg-red-500'} rounded-full mr-2`}></span>
-      {text}
-    </li>
+  <span className={`w-2 h-2 ${type === 'included' ? 'bg-green-500' : 'bg-red-500'} rounded-full mr-2`}></span>
+  {text}
+</li>
+
   );
 
   return (
@@ -168,4 +170,4 @@ const OffroadRide: React.FC = () => {
   );
 };
 
-export default OffroadRide;
+export default OffroadRides;

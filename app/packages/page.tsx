@@ -17,7 +17,7 @@ export default function Packages() {
     {
       name: 'Vattavada Package',
       path: 'vattavada',
-      videoSrc: '/videos/vattavada1.mp4',
+      videoSrc: '/videos/vattavada1.webm',
     },
     {
       name: 'Ponmudi Package',

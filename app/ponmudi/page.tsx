@@ -104,7 +104,7 @@ const Ponmudi: React.FC = () => {
     {
       name: "Echo-Point",
       description: "Witness the mesmerizing beauty of cascading waters surrounded by dense forests.",
-      videos: ["/videos/Anakulam4.mp4", "/videos/Anakulam2.mp4"]
+      videos: ["/videos/echopoint.webm"]
     },
     {
       name: "Nadukani-Mountain",
